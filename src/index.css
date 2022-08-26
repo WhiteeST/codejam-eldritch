@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* transition: all 0.6s; */
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 15px 15px 0;
+
+  /* border: 1px solid black; */
+  /* background-color: aqua; */
+  background: url('./assets/home.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: fit-content;
+  /* padding: 0 10px; */
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* background-color: aliceblue; */
+}
+
+.ancient-card {
+  width: 231px;
+  height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ancient-card:focus {
+  /* outline: 2px solid rgb(255, 252, 57); */
+}
+
+.picked {
+  border: 2px solid rgb(255, 252, 57);
+}
+
+
+.difficulty {}
+
+.difficulty__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 150px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.status-tracker-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+
+.status-tracker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.status-tracker_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 50px;
+  background-color: tomato;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+
+
+
+.create-deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 150px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.current-card {
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.complete-deck {
+  background-color: antiquewhite;
+  background: url('./assets/mythicCardBackground.png');
+}
+
+.greenCards {
+  background-color: rgb(95, 252, 95);
+}
+
+.blueCards {
+  background-color: rgb(116, 152, 250);
+}
+
+.brownCards {
+  background-color: rgb(185, 127, 40);
+}
+
+.invisible {
+  opacity: 0;
+  cursor: auto;
+}
+
+/* .Azgaloth {
+  width: auto;
+  height: auto%;
+  background: center / contain no-repeat url('./assets/Ancients/Azathoth.png');
+  background-size: 100%;
+  padding-bottom: 100%;
+}  */
