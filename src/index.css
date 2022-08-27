@@ -2,7 +2,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "TabulaPeutingeriana";
+  font-size: 15px;
   /* transition: all 0.6s; */
+}
+.ancient-card:hover,
+.difficulty__item:hover,
+.complete-deck:hover,
+.current-card:hover,
+.create-deck:hover {
+  scale: 1.05;
+}
+
+li {
+  list-style: none;
+}
+
+span {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .container {
@@ -28,70 +47,100 @@
 
 .header {
   width: 100%;
+  height: 350px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: fit-content;
   /* padding: 0 10px; */
 }
 
 .main {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
   /* background-color: aliceblue; */
 }
 
 .ancient-card {
-  width: 231px;
-  height: 300px;
+  width: 270px;
+  height: 350px;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.ancient-card:focus {
-  /* outline: 2px solid rgb(255, 252, 57); */
+.complete-deck-container {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 5%;
 }
+
+/* .ancient-card:focus {
+ outline: 2px solid rgb(255, 252, 57); */
 
 .picked {
-  border: 2px solid rgb(255, 252, 57);
+  border: 4px solid rgb(229, 224, 214);
 }
 
+.picked-black {
+  outline: 4px solid rgb(25, 21, 18);
+}
 
-.difficulty {}
+.difficulty {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 .difficulty__item {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 150px;
-  height: 50px;
-  background-color: antiquewhite;
+  width: 175px;
+  height: 40px;
+  background-color: rgb(231, 214, 198);
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 17px 0;
   cursor: pointer;
 }
 
 .status-tracker-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 350px;
+  width: 500px;
+  height: 300px;
+  margin-top: 100px;
+  background-color: rgb(231, 214, 198);
+  border-radius: 10px;
+  padding-right: 17px;
+  padding-left: 27px;
 }
 
 .status-tracker {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 350px;
-  background-color: antiquewhite;
-  border-radius: 10px;
+  width: 340px;
+  padding: 40px 0;
   gap: 10px;
+}
+
+.status-tracker__stage {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 170px;
+  width: 99px;
+  padding-left: 10px;
 }
 
 .status-tracker_item {
@@ -101,52 +150,82 @@
   width: 90px;
   height: 50px;
   background-color: tomato;
+  color: rgb(231, 214, 198);
   border-radius: 10px;
   font-size: 30px;
 }
 
-
-
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
 
 .create-deck {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 150px;
-  height: 50px;
-  background-color: antiquewhite;
+  width: 175px;
+  height: 40px;
+  background-color: rgb(231, 214, 198);
+  border: 0;
   border-radius: 10px;
   margin: 10px 0;
   cursor: pointer;
 }
 
 .current-card {
+  width: 231px;
+  height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
   background-position: center;
   background-size: cover;
   cursor: pointer;
 }
 
 .complete-deck {
+  width: 231px;
+  height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
   background-color: antiquewhite;
   background: url('./assets/mythicCardBackground.png');
+  transform: rotate(180deg);
 }
 
 .greenCards {
-  background-color: rgb(95, 252, 95);
+  /* margin-left: 30px; */
+  background-color: rgb(67, 97, 43);
 }
 
 .blueCards {
-  background-color: rgb(116, 152, 250);
+  background-color: rgb(70, 87, 159);
 }
 
 .brownCards {
-  background-color: rgb(185, 127, 40);
+  background-color: rgb(164, 124, 0);
 }
 
 .invisible {
   opacity: 0;
   cursor: auto;
+  transition: all 0.5s;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: all 1s;
+}
+
+@font-face {
+  font-family: "TabulaPeutingeriana";
+  font-style: normal;
+  font-weight: 400;
+  src: local("TabulaPeutingeriana"),
+    url("./assets/fonts/TabulaPeutingeriana.ttf")
 }
 
 /* .Azgaloth {
