@@ -26,6 +26,8 @@ let resultDeck = [];
 let nextCard;
 let colorTracker = {};
 
+const displayBlocks = ['difficulty', 'button-container', 'status-tracker-container'];
+
 const easyBlueCards = ['blue3', 'blue4', 'blue5', 'blue10'];
 const normalBlueCards = ['blue7', 'blue9', 'blue11', 'blue12'];
 const hardBlueCards = ['blue1', 'blue2', 'blue6', 'blue8'];
@@ -184,9 +186,11 @@ const createDeck = (difficultyMode) => {
 
 difficultyButton.forEach(difficulty => {
   difficulty.addEventListener('click', (event) => {
+    document.querySelector(`.${displayBlocks[1]}`).classList.remove('invisible');
     difficultyButton.forEach(button => {
       button === event.target ? button.classList.add('picked-black') : button.classList.remove('picked-black');
     })
+    completeDeck.classList.remove('invisible');
     difficultyMode = difficulty.textContent;
     // console.log(currentAncient);
     // console.log(difficultyMode);
@@ -206,10 +210,11 @@ ancientsData.forEach(ancient => {
 
 ancientsArray.forEach((ancient, index) => {
   ancient.addEventListener('click', () => {
-    if (nextCard === undefined || nextCard === resultDeck.length || nextCard === 0) {
+    if (nextCard === undefined || nextCard > resultDeck.length || nextCard === 0) {
+      document.querySelector(`.${displayBlocks[0]}`).classList.remove('invisible');
       ancientsArray.forEach(element => element.classList = 'ancient-card');//убираем picked у всех остальных
       ancient.classList.add('picked');
-      completeDeck.classList.add('invisible');
+      completeDeck.classList.add('invisible-oppacity');
       completeDeck.classList.remove('rotate');
       currentAncient = ancientsData[index].name;
       currentAncientId = index;
@@ -222,10 +227,11 @@ ancientsArray.forEach((ancient, index) => {
 
 createDeckButton.addEventListener('click', () => {
   if (currentAncient && difficultyMode) {
+    document.querySelector(`.${displayBlocks[2]}`).classList.remove('invisible');
     nextCard = 0;
     createDeckButton.classList.add('picked-black');
     currentCard.classList.add('invisible');
-    completeDeck.classList.remove('invisible');
+    completeDeck.classList.remove('invisible-oppacity');
     completeDeck.classList.add('rotate')
     statusTrackerHandler();
     createDeck(difficultyMode);
@@ -264,9 +270,19 @@ currentCard.addEventListener('click', () => {
     };
   }
   else {
-    currentCard.style.backgroundImage = null;
-    currentCard.classList.add('invisible');
-    completeDeck.classList.add('invisible');
+    nextCard++;
+    currentCard.style.backgroundImage = null;    
     completeDeck.classList.remove('rotate');
+  }
+})
+
+completeDeck.addEventListener('transitionend', () => {
+  if (nextCard > resultDeck.length) {
+    completeDeck.classList.add('invisible');
+    completeDeck.classList.add('invisible-oppacity');
+    currentCard.classList.add('invisible');
+    displayBlocks.forEach(block => {
+      document.querySelector(`.${block}`).classList.add('invisible');
+    })
   }
 })

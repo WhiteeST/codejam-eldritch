@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <header class="header">
-      <div class="difficulty">
+      <div class="difficulty invisible">
         <ul>
           <li class="difficulty__item">Очень низкая</li>
           <li class="difficulty__item">Низкая</li>
@@ -24,7 +24,7 @@
     </header>
     <main class="main">
 
-      <div class="status-tracker-container">
+      <div class="status-tracker-container invisible">
         <ul class="status-tracker__stage">
           <li>Этап <span>&#8544;</span></li>
           <li>Этап <span>&#8545;</span></li>
@@ -43,13 +43,20 @@
         </div>
       </div>
       <div class="complete-deck-container">
-        <div class="button-container"> <button class="create-deck">Создать колоду</button></div>
+        <div class="button-container invisible"> <button class="create-deck">Создать колоду</button></div>
         <div class="current-card invisible"></div>
-        <div class="complete-deck invisible"></div>
+        <div class="complete-deck invisible-oppacity"></div>
       </div>
 
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div>
+        Выберите "Древнего" > Выберите сложность > Создать колоду > Клик по колоде (рубашка колоды) > Пролистайте до
+        конца.
+      </div>
+      <div>Если выбран "Древний" и открыта колода, отключается возможность выбрать другого "Древнего", пока колода не
+        закончится.</div>
+    </footer>
 
   </div>
 
