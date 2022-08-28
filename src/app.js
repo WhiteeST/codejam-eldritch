@@ -192,8 +192,6 @@ difficultyButton.forEach(difficulty => {
     })
     completeDeck.classList.remove('invisible');
     difficultyMode = difficulty.textContent;
-    // console.log(currentAncient);
-    // console.log(difficultyMode);
   })
 })
 
@@ -249,7 +247,6 @@ const changeTrackerStatus = (color) => {
 }
 
 completeDeck.addEventListener('click', () => {
-  console.log('in completeDeck')
   if (nextCard === 0) {
     createDeckButton.classList.remove('picked-black');
     currentCard.classList.remove('invisible');
@@ -278,7 +275,7 @@ currentCard.addEventListener('click', () => {
 })
 
 completeDeck.addEventListener('transitionend', () => {
-  console.log('completeDeck transitionend eveny', nextCard);
+  // console.log('completeDeck transitionend eveny', nextCard);
   if (nextCard > resultDeck.length) {
     completeDeck.classList.add('invisible');
     completeDeck.classList.add('invisible-oppacity');
