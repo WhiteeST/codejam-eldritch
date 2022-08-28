@@ -145,7 +145,7 @@ const extractFromArray = (array) => {
 }
 
 const createDeck = (difficultyMode) => {
-  console.log(difficultyMode)
+  // console.log(difficultyMode)
   //узнаем кол-во необходимых карт для колоды
   resultDeck = [];
   requiredAllStagesCards = [
@@ -249,6 +249,7 @@ const changeTrackerStatus = (color) => {
 }
 
 completeDeck.addEventListener('click', () => {
+  console.log('in completeDeck')
   if (nextCard === 0) {
     createDeckButton.classList.remove('picked-black');
     currentCard.classList.remove('invisible');
@@ -271,12 +272,13 @@ currentCard.addEventListener('click', () => {
   }
   else {
     nextCard++;
-    currentCard.style.backgroundImage = null;    
+    currentCard.style.backgroundImage = null;
     completeDeck.classList.remove('rotate');
   }
 })
 
 completeDeck.addEventListener('transitionend', () => {
+  console.log('completeDeck transitionend eveny', nextCard);
   if (nextCard > resultDeck.length) {
     completeDeck.classList.add('invisible');
     completeDeck.classList.add('invisible-oppacity');
