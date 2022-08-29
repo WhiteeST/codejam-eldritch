@@ -5,23 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="icon" type="image/x-icon">
+  <title>Codejam eldritch</title>
 </head>
 
 <body>
   <div class="container">
     <header class="header">
+      <div class="difficulty invisible">
+        <ul>
+          <li class="difficulty__item">Очень низкая</li>
+          <li class="difficulty__item">Низкая</li>
+          <li class="difficulty__item">Средняя</li>
+          <li class="difficulty__item">Высокая</li>
+          <li class="difficulty__item">Очень высокая</li>
+        </ul>
+      </div>
+
     </header>
     <main class="main">
-      <ul class="difficulty">
-        <li class="difficulty__item">Очень низкая</li>
-        <li class="difficulty__item">Низкая</li>
-        <li class="difficulty__item">Средняя</li>
-        <li class="difficulty__item">Высокая</li>
-        <li class="difficulty__item">Очень высокая</li>
-      </ul>
-      <div class="status-tracker-container">
-        <button class="create-deck">Создать колоду</button>
+
+      <div class="status-tracker-container invisible">
+        <ul class="status-tracker__stage">
+          <li>Этап <span>&#8544;</span></li>
+          <li>Этап <span>&#8545;</span></li>
+          <li>Этап <span>&#8546;</span></li>
+        </ul>
         <div class="status-tracker">
           <div class="status-tracker_item greenCards"></div>
           <div class="status-tracker_item brownCards"></div>
@@ -34,10 +43,21 @@
           <div class="status-tracker_item blueCards"></div>
         </div>
       </div>
-      <div class="current-card ancient-card invisible"></div>
-      <div class="complete-deck ancient-card invisible"></div>
+      <div class="complete-deck-container">
+        <div class="button-container invisible"> <button class="create-deck">Создать колоду</button></div>
+        <div class="current-card invisible"></div>
+        <div class="complete-deck invisible-oppacity"></div>
+      </div>
+
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div>
+        Выберите "Древнего" > Выберите сложность > Создать колоду > Клик по колоде (рубашка колоды) > Пролистайте до
+        конца.
+      </div>
+      <div>Если выбран "Древний" и открыта колода, отключается возможность выбрать другого "Древнего", пока колода не
+        закончится.</div>
+    </footer>
 
   </div>
 
