@@ -35,9 +35,11 @@ module.exports = {
       }
     ]
   },
+  stats: { children: false },//добавил, чтобы убрать ошибку
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
+      // template: path.resolve(__dirname, 'src', 'index.html'),
       filename: './index.html'
     }),
     new MiniCssExtractPlugin({

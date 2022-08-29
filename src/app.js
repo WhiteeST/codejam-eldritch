@@ -38,6 +38,11 @@ const hardGreenCards = ['green2', 'green3', 'green4', 'green5', 'green6'];
 
 const easyBrownCards = ['brown11', 'brown12', 'brown13', 'brown14', 'brown21'];
 const normalBrownCards = ['brown1', 'brown2', 'brown3', 'brown4', 'brown5', 'brown15', 'brown16', 'brown17', 'brown18', 'brown19', 'brown20'];
+
+
+import favIconSrc from './assets/favicon.png';
+document.querySelector('link[rel="icon"]').setAttribute('href', favIconSrc); //add favicon
+
 const hardBrownCards = ['brown6', 'brown7', 'brown8', 'brown9', 'brown10'];
 
 const statusTrackerStageHandler = (stage) => {
