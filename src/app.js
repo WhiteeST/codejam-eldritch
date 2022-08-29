@@ -251,7 +251,37 @@ const changeTrackerStatus = (color) => {
   cardReserve[currentColor + index].textContent = parseInt(cardReserve[currentColor + index].textContent) - 1;
 }
 
+// заменил клик по карте, на клик по колоде
+// completeDeck.addEventListener('click', () => {
+//   if (nextCard === 0) {
+//     createDeckButton.classList.remove('picked-black');
+//     currentCard.classList.remove('invisible');
+//     currentCard.style.backgroundImage = `url('${resultDeck[nextCard]}')`;
+//     changeTrackerStatus(colorTracker[resultDeck[nextCard]]);
+//     nextCard++;
+//   }
+// })
+
+// currentCard.addEventListener('click', () => {
+//   if (nextCard < resultDeck.length) {
+//     const img = new Image();
+//     const imgSource = `${resultDeck[nextCard]}`;
+//     img.src = imgSource;
+//     img.onload = () => {
+//       currentCard.style.backgroundImage = `url('${resultDeck[nextCard]}')`;
+//       changeTrackerStatus(colorTracker[resultDeck[nextCard]]);
+//       nextCard++;
+//     };
+//   }
+//   else {
+//     nextCard++;
+//     currentCard.style.backgroundImage = null;
+//     completeDeck.classList.remove('rotate');
+//   }
+// })
+
 completeDeck.addEventListener('click', () => {
+  // console.log(nextCard)
   if (nextCard === 0) {
     createDeckButton.classList.remove('picked-black');
     currentCard.classList.remove('invisible');
@@ -259,10 +289,7 @@ completeDeck.addEventListener('click', () => {
     changeTrackerStatus(colorTracker[resultDeck[nextCard]]);
     nextCard++;
   }
-})
-
-currentCard.addEventListener('click', () => {
-  if (nextCard < resultDeck.length) {
+  else if (nextCard < resultDeck.length) {
     const img = new Image();
     const imgSource = `${resultDeck[nextCard]}`;
     img.src = imgSource;
@@ -278,6 +305,11 @@ currentCard.addEventListener('click', () => {
     completeDeck.classList.remove('rotate');
   }
 })
+
+// currentCard.addEventListener('click', () => {
+
+// })
+
 
 completeDeck.addEventListener('transitionend', () => {
   // console.log('completeDeck transitionend eveny', nextCard);
